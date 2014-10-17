@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+Instalacja
+========================
+
 Symfony Standard Edition
 ========================
 
