@@ -68,7 +68,7 @@ class IndexController extends AbstractController {
         /** @var Session $session */
         $session = $request->getSession();
         $quiz    = $session->get('quiz', null);
-        if ($quiz === null) {
+        if (!$quiz instanceof Quiz) {
             return $this->redirect($this->generateUrl('_quiz_index'));
         }
 
