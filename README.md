@@ -13,6 +13,9 @@ Instalacja
 
 6) php app/console doctrine:migrations:migrate (w celu instalacji przykadowych danych)
 
+Jeśli style nie będą działać poprawnie:
+1) php app/console assets:install
+2) php app/console assetic:dump
 
 Ustawić wirtualnego hosta tak aby prowadził: "../quiz/web/app.php"
 
