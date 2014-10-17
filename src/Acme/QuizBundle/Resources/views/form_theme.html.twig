@@ -1,0 +1,22 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block widget_attributes %}
+    {% if form.vars.block_prefixes.1 not in ["checkbox", "radio"] %}
+        {% if attr.class is defined %}{% set classes = attr.class %}{% else %}{% set classes = "" %}{% endif %}
+        {% set attr = attr|merge({"class": classes~" form-control" }) %}
+    {% endif %}
+    {{ parent() }}
+{% endblock widget_attributes %}
+
+
+{% block form_row -%}
+    {% set errors %}{{- form_errors(form) -}}{% endset %}
+
+    <div class="form-group {{ errors|length > 0 ? 'has-error' : '' }}">
+        <label class="block">
+        {{- form_label(form) -}}
+        {{- form_widget(form) -}}
+            <div class="error">{{ errors }}</div>
+        </label>
+    </div>
+{%- endblock form_row %}

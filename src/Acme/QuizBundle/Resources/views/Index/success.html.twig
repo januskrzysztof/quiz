@@ -1,0 +1,14 @@
+{% extends 'AcmeQuizBundle::layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ "success_answer"|trans }}</h2>
+            <p>
+                <b>{{ "success.your_answer"|trans }}</b>
+                <i>"{{ answer.getAnswer() }}"</i>
+            </p>
+            <a href="{{ path('_quiz_index') }}" class="btn btn-info">{{ "again_quiz"|trans }}</a>
+        </div>
+    </div>
+{% endblock body %}

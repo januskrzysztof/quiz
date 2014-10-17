@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmequiz/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmequiz/css/bootstrap-theme.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmequiz/css/style.css') }}" />
+
+    {% block stylesheets %}{% endblock %}
+
+    <script src="{{ asset('bundles/acmequiz/js/jquery-2.1.1.min.js') }}"></script>
+    <script src="{{ asset('bundles/acmequiz/js/bootstrap.min.js') }}"></script>
+
+    {% block javascripts %}{% endblock javascripts %}
+</head>
+    <body>
+        {% if form is defined %}{%  form_theme form 'AcmeQuizBundle::form_theme.html.twig'%}{% endif %}
+
+        <div class="container">
+        {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

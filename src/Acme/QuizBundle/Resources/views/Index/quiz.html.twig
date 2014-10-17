@@ -1,0 +1,69 @@
+{% extends 'AcmeQuizBundle::layout.html.twig' %}
+
+{% block javascripts %}
+    <script>
+        jQuery(document).ready(function($) {
+            $('#second_step').hide();
+
+            $('button.second_step').click(function() {
+                $('#first_step').hide();
+                $('#second_step').show();
+
+                return false;
+            });
+
+            $('button.first_step').click(function () {
+                $('#first_step').show();
+                $('#second_step').hide();
+
+                return false;
+            })
+        });
+    </script>
+{% endblock javascripts %}
+
+{% block body %}
+    <form method="post" action="{{ path('_quiz_form') }}" role="form" class="form-horizontal">
+        <div id="first_step">
+            <div class="form-group">
+                <h3>
+                    {{ "answer_category"|trans }}
+                    <i>
+                    {% if quiz.category() is not null %}
+                        {{ quiz.category().getName() }}
+                    {% else %}
+                        <span class="small">{{ 'no_category'|trans }}</span>
+                    {% endif %}
+                    </i>
+                </h3>
+                <div class="question">
+                    {{ quiz.getContent()|raw }}
+                </div>
+            </div>
+            {{ form_row(form.answer) }}
+
+            <div class="form-group">
+                <button class="btn btn-success btn-lg second_step">{{ "answer"|trans }}</button>
+            </div>
+        </div>
+        <div id="second_step">
+            {{ form_row(form.email) }}
+            <div class="form-group">
+                 <label class="block">
+                     {{ form_widget(form.policy) }}
+                     {{ form_label(form.policy) }}
+                 </label>
+            </div>
+
+            <div class="form-group">
+                <div class="left">
+                    <button class="btn btn-warning btn-lg first_step">{{ "back"|trans }}</button>
+                </div>
+                <div class="right">
+                    <button class="btn btn-success btn-lg">{{ "submit"|trans }}</button>
+                </div>
+            </div>
+        </div>
+        {{ form_row(form._token) }}
+    </form>
+{% endblock %}

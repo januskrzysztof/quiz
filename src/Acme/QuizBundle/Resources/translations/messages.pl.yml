@@ -1,0 +1,15 @@
+answer: Odpowiedz na pytanie
+answer_category: Pytanie z kategorii:
+no_category: -- brak kategori --
+your_answer: Twoja odpowiedź:
+put_email_address: Podaj swój adres e-mail
+email: e-mail
+quiz_policy: Zgadzam się z polityką konkursu.
+back: Powrót
+submit: Wyślij
+success_answer: Dzięki za odpowiedź
+again_quiz: Rozwiąż nowy quiz
+success:
+  your_answer: Twoja odpowiedź to:
+
+start_quiz: Rozpocznij quiz klikając w guzik

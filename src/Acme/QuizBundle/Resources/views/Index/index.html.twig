@@ -1,0 +1,9 @@
+{% extends 'AcmeQuizBundle::layout.html.twig' %}
+
+{% block body %}
+    <form method="post" action="{{ path('_quiz_index') }}" id="start-form">
+        {{ form_widget(form.start) }}
+        {{ form_widget(form._token) }}
+        <p>{{ "start_quiz"|trans }}</p>
+    </form>
+{% endblock %}
