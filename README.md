@@ -2,11 +2,17 @@ Instalacja
 ========================
 
 1) git clone https://github.com/januskrzysztof/quiz.git
+
 2) cd quiz
+
 3) php ../composer.phar install (o ile composer.phar jest w katalogu nadrzędnym)
+
 4) uzupełnić dane w pliku: "app/config/parameters.yml"
+
 5) php app/console doctrine:schema:update --force (w celu instalacji tabel w bazie)
+
 6) php app/console doctrine:migrations:migrate (w celu instalacji przykadowych danych)
+
 
 Ustawić wirtualnego hosta tak aby prowadził: "../quiz/web/app.php"
 
